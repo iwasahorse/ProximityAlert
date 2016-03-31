@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         try {
-            locManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 50, 0, locationListener);
+            locManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 50, 0, locationListener);
         } catch (SecurityException e) {
             e.printStackTrace();
         }
