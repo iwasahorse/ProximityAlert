@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         //인텐트를 통해 전달할 장소 이름과 방송될 펜딩 인텐트를 설정합니다.
         Intent intent = new Intent("com.homework.pavement.location.alert");
         intent.putExtra("name", name);
-        proximityIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+        proximityIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
        /* Location loc = new Location(TEST_PROVIDER);
         loc.setLatitude(latitude);
