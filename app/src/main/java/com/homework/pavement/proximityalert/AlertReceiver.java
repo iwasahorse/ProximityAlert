@@ -10,10 +10,11 @@ public class AlertReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        String name = intent.getStringExtra("name");
         boolean isEntering = intent.getBooleanExtra(LocationManager.KEY_PROXIMITY_ENTERING, false); // getBooleanExtra(String name, boolean defaultValue)
         if(isEntering)
-            Toast.makeText(context, "목표 지점에 접근중입니다..", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, String.format("%s 에 접근중입니다.", name), Toast.LENGTH_LONG).show();
         else
-            Toast.makeText(context, "목표 지점에서 벗어납니다..", Toast.LENGTH_LONG).show();
+            Toast.makeText(context,  String.format("%s 에서 벗어납니다.", name), Toast.LENGTH_LONG).show();
     }
 }
